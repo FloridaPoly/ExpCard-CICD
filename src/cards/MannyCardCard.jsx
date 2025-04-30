@@ -44,7 +44,9 @@ const MannyCardCard = ({ classes }) => {
     };
 
     return (
+        
         <div className={classes.card}>
+            test pipeline
             <button onClick={handleClick}>Call Pipeline</button>
             {responseData && <pre>{JSON.stringify(responseData, null, 2)}</pre>}
         </div>

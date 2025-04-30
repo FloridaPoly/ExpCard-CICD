@@ -1,9 +1,9 @@
 import { withStyles } from '@ellucian/react-design-system/core/styles';
 import { spacing40 } from '@ellucian/react-design-system/core/styles/tokens';
-import { Typography, TextLink } from '@ellucian/react-design-system/core';
-import { useCardInfo, useData, useExtensionControl } from '@ellucian/experience-extension-utils';
+// import { Typography, TextLink } from '@ellucian/react-design-system/core';
+import { useCardInfo, useData } from '@ellucian/experience-extension-utils';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 
 const styles = () => ({
     card: {
@@ -13,6 +13,8 @@ const styles = () => ({
         marginLeft: spacing40
     }
 });
+
+useCardInfo();
 
 const MannyCardCard = ({ classes }) => {
     const { authenticatedEthosFetch } = useData();

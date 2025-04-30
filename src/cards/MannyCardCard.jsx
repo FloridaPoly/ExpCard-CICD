@@ -4,6 +4,8 @@ import { spacing40 } from '@ellucian/react-design-system/core/styles/tokens';
 import { useData } from '@ellucian/experience-extension-utils';
 import PropTypes from 'prop-types';
 
+var responseData = null;
+
 const styles = () => ({
     card: {
         marginTop: 0,
@@ -16,7 +18,6 @@ const styles = () => ({
 const MannyCardCard = ({ classes }) => {
     const { authenticatedEthosFetch } = useData();
     const [error, setError] = useState(null);
-    var responseData = null;
 
     const handleClick = async () => {
         setError(null);
@@ -31,7 +32,7 @@ const MannyCardCard = ({ classes }) => {
             });
             if (response.ok) {
                 responseData = await response.json();
-                console.log("Response data:", responseData);                
+                console.log("Response data:", JSON.stringify(responseData, null, 2));                
             } else {
                 const errMsg = `Fetch failed with status: ${response.status}`;
                 console.error(errMsg);

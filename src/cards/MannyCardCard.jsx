@@ -33,6 +33,7 @@ const MannyCardCard = ({ classes }) => {
 
             if (response.ok) {
                 const data = await response.json();
+                console.log("Response data:", JSON.stringify(data, null, 2));
                 setResponseData(data);
             } else {
                 console.error("Fetch failed with status:", response.status);

@@ -15,8 +15,8 @@ const styles = () => ({
 
 const MannyCardCard = ({ classes }) => {
     const { authenticatedEthosFetch } = useData();
-    const [responseData, setResponseData] = useState(null);
     const [error, setError] = useState(null);
+    var responseData = null;
 
     const handleClick = async () => {
         setError(null);
@@ -30,9 +30,8 @@ const MannyCardCard = ({ classes }) => {
                 body: JSON.stringify({ manny: "test" })
             });
             if (response.ok) {
-                const data = await response.json();
-                console.log("Response data:", data);
-                setResponseData(data);
+                responseData = await response.json();
+                console.log("Response data:", responseData);                
             } else {
                 const errMsg = `Fetch failed with status: ${response.status}`;
                 console.error(errMsg);

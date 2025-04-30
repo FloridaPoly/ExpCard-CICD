@@ -9,7 +9,7 @@ module.exports = {
         description: 'This is an introductory card to the Ellucian Experience SDK',
         pageRoute: {
             route: '/',
-            excludeClickSelectors: ['a']
+            excludeClickSelectors: ['a', 'button']
         }
     }],
     page: {

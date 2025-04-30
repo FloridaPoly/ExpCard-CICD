@@ -14,12 +14,12 @@ const styles = () => ({
     }
 });
 
-useCardInfo();
+
 
 const MannyCardCard = ({ classes }) => {
     const { authenticatedEthosFetch } = useData();
     const [responseData, setResponseData] = useState(null);
-
+    useCardInfo();
     const handleClick = async () => {
         try {
             const response = await authenticatedEthosFetch("manny-test-pipeline", {
